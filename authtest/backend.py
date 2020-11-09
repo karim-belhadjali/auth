@@ -9,7 +9,7 @@ def authenticate(username=None, password=None):
     user = User.objects.get(username=username)
     print(user)
     if user is not None:
-        if user.password == password:
+        if user.check_password(password):
             return user
         else:
             return None
