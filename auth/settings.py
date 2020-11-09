@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'authtest.backend']
+
 
 AUTH_USER_MODEL = 'authtest.User'
 # Password validation
