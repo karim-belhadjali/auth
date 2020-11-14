@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{scrollmonitor}" />
+    <file url="file://$PROJECT_DIR$" libraries="{bootstrap, events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd, font-awesome, hoy3lrg, jquery, jquery-1.11.1, jquery-2.2.4, meyer-reset, scrollmonitor, stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e}" />
   </component>
 </project>

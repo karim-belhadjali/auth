@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authtest',
     'materializecssform',
-    'postman',
+    'chat'
 
 ]
 
@@ -54,7 +55,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'auth.urls'
-
+##channels
+ASGI_APPLICATION = 'auth.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -120,3 +130,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
