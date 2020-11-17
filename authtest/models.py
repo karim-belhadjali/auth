@@ -16,4 +16,4 @@ class User(AbstractUser):
     role = models.ForeignKey(Role, blank=True, null=True, on_delete=models.CASCADE)  # role
     USERNAME_FIELD = 'username'
     def __str__(self):
-        return self.full_name
+        return self.username

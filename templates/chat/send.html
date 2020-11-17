@@ -1,0 +1,42 @@
+{% extends 'chat/base.html' %}
+{% block content %}
+    <form class="col s12" method="POST" action="{% url 'sendPage' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s12">
+                <input disabled value="{{ user.username }}" id="disabled" type="text" class="validate">
+                <label for="disabled">Sender</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Placeholder" id="subject" type="text" class="validate" name="subject">
+                <label for="first_name">Subject</label>
+            </div>
+            <div class="input-field col s12">
+                <select name="recipient">
+                    <option value="" disabled selected>Choose your Recipient</option>
+                    {% for recipent in recipients %}
+                        <option value={{ recipent.username }}>{{ recipent.username }}</option>
+                    {% endfor %}
+                </select>
+                <label>Recipient</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Type your message here" id="Body" type="text" class="validate" name="body">
+                <label for="first_name">Body</label>
+            </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Send
+            <i class="material-icons right">send</i>
+        </button>
+
+    </form>
+{% endblock %}
